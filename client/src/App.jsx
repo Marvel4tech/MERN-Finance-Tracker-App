@@ -1,10 +1,15 @@
-
+import { Routes, Route } from "react-router-dom"
+import { Auth } from "./pages/auth"
+import { Dashboard } from "./pages/dashboard"
 
 function App() {
 
   return (
       <div>
-          <h1 className=" bg-red-400" >Hellow world</h1>
+          <Routes>
+            <Route path="/" element={<Dashboard />}/>
+            <Route path="/signin" element={<Auth />}/>
+          </Routes>
       </div>
   )
 }
