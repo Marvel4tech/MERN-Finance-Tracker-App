@@ -33,33 +33,34 @@ export const FinancialRecordForm = () => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label>Description:</label>
+        <div className=" w-full">
+            <form onSubmit={handleSubmit} className=" space-y-3">
+                <div className=" flex flex-col gap-[2px]">
+                    <label className=" font-semibold text-sm">Description:</label>
                     <input 
                         type="text" 
                         required 
                         label='Description' 
                         value={description} 
                         onChange={(e) => setDescription(e.target.value)}
-                        className=" border"
+                        className=" py-1 px-3 border border-gray-700 rounded-sm"
                     />
                 </div>
-                <div>
-                    <label>Amount:</label>
+                <div className=" flex flex-col gap-[2px]">
+                    <label className=" font-semibold text-sm">Amount:</label>
                     <input 
                         type="number" 
                         required 
                         label='Amount' 
                         value={amount} 
                         onChange={(e) => setAmount(e.target.value)}
-                        className=" border"
+                        className=" py-1 px-3 border border-gray-700 rounded-sm"
                     />
                 </div>
-                <div>
-                    <label>Category:</label>
-                    <select required value={category} onChange={(e) => setCategory(e.target.value)} className=" border">
+                <div className=" flex flex-col gap-[2px]">
+                    <label className=" font-semibold text-sm">Category:</label>
+                    <select required value={category} onChange={(e) => setCategory(e.target.value)} className=" py-2 px-3 border
+                    border-gray-700 rounded-sm text-sm text-blue-600">
                         <option value="">Select a Category</option>
                         <option value="Food">Food</option>
                         <option value="Rent">Rent</option>
@@ -69,16 +70,17 @@ export const FinancialRecordForm = () => {
                         <option value="Other">Other</option>
                     </select>
                 </div>
-                <div>
-                    <label>Payment Method:</label>
-                    <select required value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} className=" border">
+                <div className=" flex flex-col gap-[2px]">
+                    <label className=" font-semibold text-sm">Payment Method:</label>
+                    <select required value={paymentMethod} onChange={(e) => setPaymentMethod(e.target.value)} className=" py-2 px-3 border
+                    border-gray-700 rounded-sm text-sm text-blue-600">
                         <option value="">Select a Payment Method</option>
                         <option value="Credit Card">Credit Card</option>
                         <option value="Bank">Bank</option>
                         <option value="Bank Transfer">Bank Transfer</option>
                     </select>
                 </div>
-                <button type="submit" className=" bg-green-600 py-2 px-4 rounded-md text-white">
+                <button type="submit" className=" bg-blue-600 py-1 px-4 rounded-sm text-white">
                     Add Record
                 </button>
             </form>

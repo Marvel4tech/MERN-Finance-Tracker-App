@@ -65,7 +65,7 @@ export const FinancialRecordList = () => {
             Header: "Delete",
             accessor: "delete",
             Cell: ({row}) => (
-                <button onClick={() => null}> Delete </button>
+                <button className=" bg-blue-600 text-white py-1 px-3 text-sm font-semibold rounded-md" onClick={() => null}> Delete </button>
             )
         },
     ], [])
@@ -73,13 +73,13 @@ export const FinancialRecordList = () => {
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data: records })
 
     return (
-        <div>
-            <table {...getTableProps()}>
+        <div className=" w-full flex md:justify-center overflow-x-scroll mt-16">
+            <table {...getTableProps()} className=" w-full">
                 <thead>
                   {headerGroups.map((hg) => (
                     <tr {...hg.getHeaderGroupProps()}>
                         {hg.headers.map((column) => (
-                            <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+                            <th className=" bg-blue-600 text-white font-semibold border text-left py-2 px-4" {...column.getHeaderProps()}>{column.render("Header")}</th>
                         ))}
                     </tr>
                   ))}
@@ -91,7 +91,7 @@ export const FinancialRecordList = () => {
                             <tr {...row.getRowProps()}>
                                 {row.cells.map((cell) => {
                                     return (
-                                        <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                                        <td className=" text-black border bg-slate-300 py-3 px-4" {...cell.getCellProps()}>{cell.render("Cell")}</td>
                                     )
                                 })}
                             </tr>
